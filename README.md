@@ -1,4 +1,4 @@
-# Student Attendance Tracker — Project Factory
+# Student Attendance Tracker
 
 A Bash automation tool that generates a complete Student Attendance Tracker workspace from scratch.  
 It sets up the project structure, validates dependencies, manages configuration updates, and ensures safe cleanup through signal handling.
