@@ -1,4 +1,4 @@
-file_content = """# Student Attendance Tracker — Project Factory
+# Student Attendance Tracker — Project Factory
 
 A Bash automation tool that generates a complete Student Attendance Tracker workspace from scratch.  
 It sets up the project structure, validates dependencies, manages configuration updates, and ensures safe cleanup through signal handling.
@@ -42,19 +42,7 @@ When executed, the script automatically:
 
 ---
 
-## 📂 Generated Project Structure
 
-attendance_tracker_<project_name>/
-
-├── attendance_checker.py
-├── Helpers/
-│   ├── assets.csv
-│   └── config.json
-│
-├── reports/
-│   └── reports.log
-
----
 
 ## Interactive Configuration
 
