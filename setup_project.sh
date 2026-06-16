@@ -55,25 +55,16 @@ echo "Files copied successfully"
 
 read -rp "Do you want to update attendance thresholds? (y/n): " answer
 
-if [[ "$answer" =~ ^[Yy]$ ]]; then
-    read -rp "Enter Warning threshold (default 75): " warning
-    read -rp "Enter Failure threshold (default 50): " failure
+if [ "$answer" = "y" ]; then
+    read -p "Enter Warning threshold (default 75): " warning
+    read -p "Enter Failure threshold (default 50): " failure
 
-    warning=${warning:-75}
-    failure=${failure:-50}
-
-    if [[ "$warning" =~ ^[0-9]+$ && "$failure" =~ ^[0-9]+$ ]]; then
-        CONFIG_FILE="$PROJECT_DIR/Helpers/config.json"
-
-        # safer JSON replacement (no broken sed quoting)
-        tmp=$(mktemp)
-        jq --arg w "$warning" --arg f "$failure" \
-            '.warning = ($w|tonumber) | .failure = ($f|tonumber)' \
-            "$CONFIG_FILE" > "$tmp" && mv "$tmp" "$CONFIG_FILE"
-
-        echo "Config updated: warning=$warning, failure=$failure"
+    if [[ "$warning" =~ ^[0-9]+$ ]] && [[ "$failure" =~ ^[0-9]+$ ]]; then
+        sed -i 's/"warning: 75/"warning": $warning/' "$PROJECT_DIR/Helpers/config.json"
+        sed -i 's/"failure": 50/"failure": $failure/' "$PROJECT_DIR/Helpers/config.json"
+        echo "Config updated."
     else
-        echo "Invalid input — thresholds must be numeric. Keeping defaults."
+        echo "Invalid input — thresholds must be numbers. Keeping defaults."
     fi
 fi
 
