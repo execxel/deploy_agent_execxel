@@ -17,6 +17,7 @@ Watch the full walkthrough here:
 ### Clone the repository
 
 git clone https://github.com/execxel/deploy_agent_execxel.git
+
 cd deploy_agent_execxel
 
 ---
