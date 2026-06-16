@@ -8,7 +8,7 @@ It sets up the project structure, validates dependencies, manages configuration 
 ## Video Explanation
 
 Watch the full walkthrough here:  
-https://www.youtube.com/watch?v=XrN9DiSehd0
+
 
 ---
 
