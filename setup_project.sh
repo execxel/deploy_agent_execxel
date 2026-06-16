@@ -8,7 +8,7 @@ cleanup() {
     if [[ -n "${PROJECT_DIR:-}" && -d "$PROJECT_DIR" ]]; then
         tar -czf "${PROJECT_DIR}_archive_$(date +%Y%m%d_%H%M%S).tar.gz" "$PROJECT_DIR"
         rm -rf "$PROJECT_DIR"
-        echo "📦 Archived and removed: $PROJECT_DIR"
+        echo "Archived and removed: $PROJECT_DIR"
     fi
 
     exit 1
@@ -40,7 +40,7 @@ for file in attendance_checker.py assets.csv config.json reports.log; do
 done
 
 
-echo "📁 Creating project structure..."
+echo "Creating project structure..."
 
 mkdir -p "$PROJECT_DIR/Helpers"
 mkdir -p "$PROJECT_DIR/reports"
@@ -50,7 +50,7 @@ cp assets.csv "$PROJECT_DIR/Helpers/"
 cp config.json "$PROJECT_DIR/Helpers/"
 cp reports.log "$PROJECT_DIR/reports/"
 
-echo "✅ Files copied successfully"
+echo "Files copied successfully"
 
 
 read -rp "Do you want to update attendance thresholds? (y/n): " answer
@@ -71,14 +71,14 @@ if [[ "$answer" =~ ^[Yy]$ ]]; then
             '.warning = ($w|tonumber) | .failure = ($f|tonumber)' \
             "$CONFIG_FILE" > "$tmp" && mv "$tmp" "$CONFIG_FILE"
 
-        echo "⚙️ Config updated: warning=$warning, failure=$failure"
+        echo "Config updated: warning=$warning, failure=$failure"
     else
-        echo "⚠️ Invalid input — thresholds must be numeric. Keeping defaults."
+        echo "Invalid input — thresholds must be numeric. Keeping defaults."
     fi
 fi
 
 
-echo "🔍 Running environment health check..."
+echo "Running environment health check..."
 
 if command -v python3 >/dev/null 2>&1; then
     echo "Python detected: $(python3 --version)"
