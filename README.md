@@ -8,7 +8,7 @@ It sets up the project structure, validates dependencies, manages configuration 
 ## Video Explanation
 
 Watch the full walkthrough here:  
-
+[Explanation Video](https://www.loom.com/share/78619e205594464faeff417e07118983)
 
 ---
 
