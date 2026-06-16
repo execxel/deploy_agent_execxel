@@ -64,7 +64,7 @@ if [ "$answer" = "y" ]; then
         sed -i 's/"failure": 50/"failure": $failure/' "$PROJECT_DIR/Helpers/config.json"
         echo "Config updated."
     else
-        echo "Invalid input — thresholds must be numbers. Keeping defaults."
+        echo "Invalid input. Thresholds must be numbers."
     fi
 fi
 
@@ -74,7 +74,7 @@ echo "Running environment health check..."
 if command -v python3 >/dev/null 2>&1; then
     echo "Python detected: $(python3 --version)"
 else
-    echo "Python V3 not found on this system."
+    echo "Python NEEDS to be installed on this system."
 fi
 
 
