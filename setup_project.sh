@@ -24,7 +24,7 @@ if [[ -z "$input" ]]; then
     exit 1
 fi
 
-PROJECT_DIR="${PROJECT_PREFIX}_${input}"
+PROJECT_DIR="attendance_tracker_${input}"
 
 
 if [[ -d "$PROJECT_DIR" ]]; then
